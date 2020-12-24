@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+          grecaptcha.render('html_element', {
+            'sitekey' : '6Lfgtc4ZAAAAAEEqtkAMRnDrdYWRBxI-sPGxrVB0'
+          });
+        };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</script>
+
+
+</head>
+<body>
+    <div class="content">
+        <div class="main">
+            <div class="form">
+                <div class="header">
+                    <h1>Login</h1>
+                </div>
+                <small>
+                <% if (messages.error) { %>
+                    <%= messages.error %>
+                <% } %>
+                </small>      
+                <div class="form">
+                    <form action="/login" method="POST">
+                            
+                        <div>
+                            <input type="text" name="email" id="username" placeholder="Github Username">
+                        </div>
+                        <br>
+                        <br>
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="Password" required>
+                        </div>
+                        <br>
+                        <div class="g-recaptcha" data-
+                        sitekey="6Lfgtc4ZAAAAAEEqtkAMRnDrdYWRBxI-sPGxrVB0"></div>
+                        <br>
+                        <br>
+                        <button type="submit" value="Login">Login</button>
+
+                    </form>
+                </div>
+                <div class="link_to_register">
+                    <a href="/register">register</a>   
+                </div>
+                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                async defer></script>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
